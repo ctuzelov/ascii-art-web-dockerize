@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Ascii-art-web</title>
+    <link rel='stylesheet' href='/style/main.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Permanent+Marker&family=Press+Start+2P&family=Sigmar+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div>
+        <header>
+        <center><h1 class="header">
+            Ascii-art-web
+        </h1></center>
+        </header>
+
+        <form method = "POST" action = "/ascii-art">
+        <center>
+            <div class="rad"> 
+                <p><textarea class="textar" name="text" type="text" rows="10" placeholder="Make a note"></textarea></p>
+            </div>
+
+            <p>
+                <div class="gap">
+                    <input type="radio" name="banner" value="standard" checked>
+                    <label class="banners" >standard</label>
+                
+                    <input type="radio" name="banner" value="thinkertoy">
+                    <label class="banners" >thinkertoy</label>
+                
+                    <input type="radio" name="banner" value="shadow" >
+                    <label class="banners" >shadow</label>
+                </div>
+                    <button class="button" type="submit">submit</button>
+            </p>
+        </center>
+        </form>
+
+    </div>
+
+    
+    <center>
+        {{ if .Post }}
+        <div class="art">
+            <pre>{{.Output}}</pre>      
+        </div>
+        {{end}}
+    </center>
+</body>
+</html>
